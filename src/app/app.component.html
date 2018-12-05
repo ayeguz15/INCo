@@ -1,0 +1,57 @@
+<span style="text-align:center">
+  <div class="jumbotron">
+    <h1>Bienvenido a M¡Celu</h1>
+    <p>Este asistente virtual te ayudará a encontrar los celulares que mejor se adaptan a tus necesidades.</p>
+  </div>
+
+  <div class="container">
+    <span [ngSwitch]="actionType">
+
+      <div *ngSwitchCase="'OPEN_QUESTION'">
+        <label for="value">{{actionParams.message}}</label>
+        <input id="value" type="text" name="value" [(ngModel)]="value" />
+        <button (click)='next()' class="btn btn-lg btn-block btn-primary" style="margin-top: 10px">Continuar</button>
+      </div>
+
+      <div *ngSwitchCase="'MULTIPLE_CHOICE'">
+        <p>{{actionParams.message}}</p>
+        <div *ngFor="let option of actionParams.options" style="margin-top: 10px">
+          <button (click)=next(option.value) class="btn btn-lg btn-block btn-primary">{{option.description}}</button>
+        </div>
+      </div>
+
+
+      <div *ngSwitchCase="'SHOW_RESULTS'">
+        <ng-container *ngIf="countRecommended() > 0; then thenTemplate; else elseTemplate">
+        </ng-container>
+        <ng-template #thenTemplate>
+          <h2>Felicidades! Encontramos el celular perfecto para vos!</h2>
+          <div *ngFor="let recommended of userFacts.recommended; let i = index" [attr.data-index]="i" style="margin-top: 10px">
+            <div *ngIf="recommended !==0" class="col-sm itemBox">
+              <div style="font-weight: bold">{{phones[i].vendor}} - {{phones[i].model}}</div>
+              <img src="assets/images/{{phones[i].features.img}}" alt="Imagen no disponible" style="height: 200px;">
+              <div style="color: red; font-weight: bold; font-size: larger">$ {{phones[i].price-0.01}}</div>
+              <div>Pantalla {{phones[i].features.screenSize}}''</div>
+              <div>Cámara {{phones[i].features.camera}}</div>
+              <div>Memoria RAM {{phones[i].features.ram}}</div>
+              <div>Procesador {{phones[i].features.processor}}</div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template #elseTemplate>
+          <h3>Lo lamentamos :( Ninguno de nuestros celulares coincide con tus necesidades.</h3>
+          <p>Podés quitar alguna opción o volver a empezar. Te deseamos mucha suerte para la próxima!!!</p>
+          <div *ngIf="userFacts.price"><button class="btn" style="margin-top: 10px" (click)="remove('price')">Quitar precio</button></div>
+          <div *ngIf="userFacts.camera"><button class="btn" style="margin-top: 10px" (click)="remove('camera')">Quitar cámara</button></div>
+          <div *ngIf="userFacts.screenSize"><button class="btn" style="margin-top: 10px" (click)="remove('screenSize')">Quitar tamaño de pantalla</button></div>
+          <div *ngIf="userFacts.ram"><button class="btn" style="margin-top: 10px" (click)="remove('ram')">Quitar memoria ram</button></div>
+          <div *ngIf="userFacts.processor"><button class="btn" style="margin-top: 10px" (click)="remove('processor')">Quitar prcessador</button></div>
+        </ng-template>
+        <button style="margin-top: 10px" (click)=restart() class="btn btn-lg btn-block btn-primary">Volver a empezar!</button>
+      </div>
+      <div *ngSwitchDefault>
+        tipo indefinido: {{actionType}}
+      </div>
+    </span>
+  </div>
+</span>

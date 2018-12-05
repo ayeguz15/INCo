@@ -4,4 +4,4 @@
 Sistema basado en conocimiento para la sugerencia de celulares a posibles clientes.
 
 Consiste en una aplicación web desarrollada con Angular.
-Utiliza json-rules-engine como motor de reglas.
+Utiliza [json-rules-engine](https://github.com/cachecontrol/json-rules-engine) como motor de reglas.

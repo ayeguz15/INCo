@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Engine, Rule } from 'json-rules-engine';
 import { lgKite } from './rules/suggestions/lgKite';
 import { lgG6 } from './rules/suggestions/lgG6';
@@ -83,15 +83,7 @@ export class EngineService {
 
   private setCustomOperators() {
     this.engine.addOperator('sumEqual', (factValue, jsonValue) => {
-      // console.log('Eval sumEqual:', factValue, jsonValue);
-      if (!factValue || !factValue.length) {
-        console.log('sum: false');
-        return false;
-      } else {
-        const sum = factValue.reduce((a, b) => a + b, 0);
-        console.log('sum:', sum);
-        return sum === jsonValue;
-      }
+      return factValue && factValue.length && (factValue.reduce((a, b) => a + b, 0) === jsonValue);
     });
   }
 

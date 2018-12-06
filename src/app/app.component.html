@@ -10,7 +10,7 @@
       <div *ngSwitchCase="'OPEN_QUESTION'">
         <label for="value">{{actionParams.message}}</label>
         <input id="value" type="text" name="value" [(ngModel)]="value" />
-        <button (click)='next()' class="btn btn-lg btn-block btn-primary" style="margin-top: 10px">Continuar</button>
+        <button (click)='next(value)' class="btn btn-lg btn-block btn-primary" style="margin-top: 10px">Continuar</button>
       </div>
 
       <div *ngSwitchCase="'MULTIPLE_CHOICE'">

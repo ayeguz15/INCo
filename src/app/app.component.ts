@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { EngineService } from './engine-service';
-import { componentNeedsResolution } from '@angular/core/src/metadata/resource_loading';
 import { phoneFacts } from './facts/phones';
 
 @Component({
@@ -33,11 +32,8 @@ export class AppComponent {
     this.engineService.run(this.userFacts);
   }
 
-  public next(value?: any) {
-    if (value) {
-      this.value = value;
-    }
-    this.userFacts[this.actionParams.path] = this.value;
+  public next(value: any) {
+    this.userFacts[this.actionParams.path] = value;
     this.value = undefined;
     this.run();
   }

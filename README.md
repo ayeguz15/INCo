@@ -6,7 +6,15 @@ Sistema basado en conocimiento para la sugerencia de celulares a posibles client
 Consiste en una aplicación web desarrollada con Angular.
 Utiliza [json-rules-engine](https://github.com/cachecontrol/json-rules-engine) como motor de reglas.
 
+**Equipo de Trabajo:**
+* Blanck, Werner Kurt
+* Castro, Cristian Eduardo
+* Cuellar, Osvaldo Ezequías
+* Mamamni, Dalila Jaquelina
+* Yurquina, Juan Carlos
+
 ## Final assignment for 'Ingeniería del Conocimiento'.
 
 It's a Knowledge Based App developed using Angular.
+
 [json-rules-engine](https://github.com/cachecontrol/json-rules-engine) is used as the rule engine.

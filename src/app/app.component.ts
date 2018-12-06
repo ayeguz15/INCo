@@ -10,7 +10,7 @@ import { phoneFacts } from './facts/phones';
 
 export class AppComponent {
 
-  private actionType = 'algo';
+  private actionType = '';
   private actionParams: any = {};
   private userFacts = { name: '', recommended: [] };
   private phones = phoneFacts;
@@ -18,7 +18,6 @@ export class AppComponent {
   private value: number;
 
   constructor(private engineService: EngineService) {
-    console.log('Constructor');
     this.run();
   }
 
@@ -40,10 +39,6 @@ export class AppComponent {
 
   public processEvent(component, params) {
     console.log('Process event', params);
-
-    console.log('type', params.type);
-
-    console.log(component.actionType);
     component.actionType = params.type;
     component.actionParams = params;
 

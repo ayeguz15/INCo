@@ -1,17 +1,15 @@
-# M¡Celu
+# ToyotaSystem
 ## Trabajo Final para Ingeniería del Conocimento - Facultad de Ingeniería - Universidad Nacional de Jujuy.
 
-Sistema basado en conocimiento para la sugerencia de celulares a posibles clientes.
+Sistema basado en conocimiento para la sugerencia de automóviles de la marca Toyota a posibles clientes.
 
 Consiste en una aplicación web desarrollada con Angular.
 Utiliza [json-rules-engine](https://github.com/cachecontrol/json-rules-engine) como motor de reglas.
 
 **Equipo de Trabajo:**
-* Blanck, Werner Kurt
-* Castro, Cristian Eduardo
-* Cuellar, Osvaldo Ezequías
-* Mamamni, Dalila Jaquelina
-* Yurquina, Juan Carlos
+* Guzmán Dalma Ayelen
+* Mamaní Mendoza Gonzalo
+* Vilte Pablo
 
 ## Final assignment for 'Ingeniería del Conocimiento'.
 
@@ -20,7 +18,7 @@ It's a Knowledge Based App developed using Angular.
 [json-rules-engine](https://github.com/cachecontrol/json-rules-engine) is used as the rule engine.
 
 
-# MiCelu
+# ToyotaSystem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
